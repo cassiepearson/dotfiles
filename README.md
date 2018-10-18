@@ -31,7 +31,7 @@ I do not own nor did I produce this image, it is available [here](https://www.re
 * gnome-tweak-tool
 * vim
 * tabliss - firefox extension
-* Easy Installation in apt: sudo apt install zsh caja mate-terminal feh lolcat make cmake xclip git curl gnome-tweak-tool vim
+* Easy Installation with apt: sudo apt install zsh caja mate-terminal feh lolcat make cmake xclip git curl gnome-tweaks vim
 * The following must be installed separately: Albert, compton, i3-gaps, oh-my-zsh, arc gtk theme, la capitaine icons, and tabliss (firefox extension)
 
 This build was created using Ubuntu 18.04 desktop, these same configuration files also work with any other debian based operating system (and debian) as long as the gnome desktop is installed. For other operating systems, change the line in the i3 conf that imports the GTK themes.
