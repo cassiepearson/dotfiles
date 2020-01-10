@@ -1,7 +1,8 @@
 # Aliases
 
 # Access config files easily
-alias zshconfig="nvim ~/.zshrc"
+alias zshrc="nvim ~/.zshrc"
+alias vimrc="nvim ~/.vimrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Navigation shortcuts
