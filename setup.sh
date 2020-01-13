@@ -15,14 +15,14 @@ if [ "${PCKG}" = "brew" ]; then
     easy_install pip
     pip install neovim
     `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
-    yes Yes | sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 elif [ "${PCKG}" = "apt" ]; then
     # Install all dependencies
     echo $PSWD | sudo apt update
     echo $PSWD | sudo apt-get -qq --yes install zsh python3 python3-pip neovim curl git
     pip3 install neovim
     `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
-    yes YES | sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" | true
 else
     echo "Implemented for: brew, apt. Otherwise only works if python3, pip, neovim python package, git, curl, zsh, oh-my-zsh, nvmim are already installed."
 fi
@@ -52,5 +52,6 @@ fi
 /bin/cp -f $REPOS/dotfiles/.vimrc $HOME/.vimrc
 /bin/cp -f $REPOS/dotfiles/.config/nvim/init.vim $HOME/.config/nvim/init.vim
 /bin/cp -rf $REPOS/dotfiles/.zsh $HOME/
+/bin/cp -f $REPOS/.ducky $HOME/.ducky
 
 echo "Autosetup complete."
