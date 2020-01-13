@@ -125,19 +125,32 @@ set listchars=tab:\|-,eol:¬,trail:•,nbsp:•,extends:>,precedes:<,space:• "
 " ------------------------------------------------------------------------------
 
 " Custom keybindings -----------------------------------------------------------
-let mapleader="t"                                          " Set a prefix key
-nnoremap <leader>i :set list!<CR>                          " Toggle show invisibles
-nnoremap <leader>s :setlocal spell! spelllang=en_us<CR>    " Toggle spellcheck
-nnoremap <leader>l :Limelight!! 0.8<CR>                    " Toggle Limelight
-map <leader>t :NERDTreeToggle<CR>                          " Toggle NerdTree
-nnoremap o o<Esc>                                          " Bind insert newline to insert newline <esc>
-nnoremap O O<Esc>                                          " bc by default insert newline enters into insert mode
+" Set a prefix key
+let mapleader="t"
+" Toggle show invisibles
+nnoremap <leader>i :set list!<CR>
+" Toggle spellcheck
+nnoremap <leader>s :setlocal spell! spelllang=en_us<CR>
+" Toggle Limelight
+nnoremap <leader>ll :Limelight!! 0.8<CR>
+" Toggle lopen - Not a true toggle since that requires a lot of vim scripting
+nnoremap <leader>lo :lopen<CR>
+nnoremap <leader>lc :lclose<CR>
+" Toggle NerdTree
+map <leader>t :NERDTreeToggle<CR>
+" Bind insert newline to insert newline <esc> bc by default insert newline enters into insert mode
+nnoremap o o<Esc>
+nnoremap O O<Esc>
 
 "split navigations
-nnoremap <C-J> <C-W><C-J>                                  " Move split below
-nnoremap <C-K> <C-W><C-K>                                  " Move split above
-nnoremap <C-L> <C-W><C-L>                                  " Move split right
-nnoremap <C-H> <C-W><C-H>                                  " Move split left
+" Move split below
+nnoremap <C-J> <C-W><C-J>
+" Move split above
+nnoremap <C-K> <C-W><C-K>
+" Move split right
+nnoremap <C-L> <C-W><C-L>
+" Move split left
+nnoremap <C-H> <C-W><C-H>
 " deoplete tab-complete
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
