@@ -23,6 +23,12 @@ else
     echo "Implemented for: brew, apt. Otherwise only works if python3, pip, neovim python package, git, curl, zsh, oh-my-zsh, nvmim are already installed."
 fi
 
+
+# Make a bash profile
+if [[ ! -e "${HOME}/.bash_profile" ]]; then
+    touch $HOME/.bash_profile
+fi
+
 # Put all config files in place
 if [[ ! -e "${REPOS}" ]]; then
     mkdir $REPOS
@@ -31,6 +37,11 @@ fi
 if [[ ! -e "${REPOS}/dotfiles" ]]; then
     cd $REPOS
     `git clone https://github.com/cnegrich/dotfiles.git`
+fi
+
+
+if [[ ! -e "${HOME}/.config/nvim" ]]; then
+    mkdir $HOME/.config/nvim
 fi
 
 /bin/cp -f $REPOS/dotfiles/.zshrc $HOME/.zshrc
