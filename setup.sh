@@ -27,6 +27,7 @@ if [[ ! -e "${REPOS}" ]]; then
 fi
 
 if [[ ! -e "${REPOS}/dotfiles" ]]; then
+    cd $REPOS
     `git clone https://github.com/cnegrich/dotfiles.git`
 fi
 
@@ -35,3 +36,4 @@ fi
 /bin/cp -f $REPOS/dotfiles/.config/nvim/init.vim $HOME/.config/nvim/init.vim
 /bin/cp -rf $REPOS/dotfiles/.zsh $HOME/
 
+echo "Autosetup complete."
