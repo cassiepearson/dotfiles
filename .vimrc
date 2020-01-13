@@ -141,6 +141,8 @@ map <leader>t :NERDTreeToggle<CR>
 " Bind insert newline to insert newline <esc> bc by default insert newline enters into insert mode
 nnoremap o o<Esc>
 nnoremap O O<Esc>
+" Map fzf
+nnoremap <leader>ff :FZF<CR>
 
 "split navigations
 " Move split below
