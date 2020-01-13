@@ -6,6 +6,9 @@ PCKG=$1
 # Set a directory to clone
 REPOS=$HOME/Repos
 
+# Read in user password
+read -s -p "Enter Password for sudo: " PSWD
+
 if [ "${PCKG}" = "brew" ]; then
     # Install all dependencies
     brew install zsh neovim curl python git
@@ -15,7 +18,8 @@ if [ "${PCKG}" = "brew" ]; then
     yes Yes | sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 elif [ "${PCKG}" = "apt" ]; then
     # Install all dependencies
-    apt update && apt-get -qq --yes install zsh python3 python3-pip neovim curl git
+    echo $PSWD | sudo apt update
+    echo $PSWD | sudo apt-get -qq --yes install zsh python3 python3-pip neovim curl git
     pip3 install neovim
     `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
     yes YES | sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
