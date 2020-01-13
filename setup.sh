@@ -19,10 +19,11 @@ if [ "${PCKG}" = "brew" ]; then
 elif [ "${PCKG}" = "apt" ]; then
     # Install all dependencies
     echo $PSWD | sudo apt update
-    echo $PSWD | sudo apt-get -qq --yes install zsh python3 python3-pip neovim curl git
+    echo $PSWD | sudo apt-get -qq --yes install zsh python3 python3-pip neovim curl git libuser
     pip3 install neovim
     `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
-    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" | true
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    echo $PSWD | sudo lchsh $(whoami) /bin/zsh
 else
     echo "Implemented for: brew, apt. Otherwise only works if python3, pip, neovim python package, git, curl, zsh, oh-my-zsh, nvmim are already installed."
 fi
