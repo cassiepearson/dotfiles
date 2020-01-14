@@ -10,6 +10,7 @@ alias home='cd $HOME'
 alias ..='cd ..'
 alias ...='cd ../../../'
 alias ....='cd ../../../../'
+alias csd='cd $SD'
 alias ducky="nvim ~/.ducky"
 alias duck="nvim ~/.ducky"
 alias repos="cd $HOME/Repos"

@@ -27,3 +27,4 @@ export PATH="/usr/local/sbin:$PATH"
 
 # Set custom paths
 export REPOS="$HOME/Repos"
+export SD="$HOME" # Initialize as dummy value, see sd in functions.zsh

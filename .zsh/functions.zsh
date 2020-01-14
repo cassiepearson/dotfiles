@@ -4,6 +4,12 @@ manp()
     man -t "${1}" | open -f -a Preview
 }
 
+# Set a directory to an env variable for easy access
+sd()
+{
+    export SD="${1}" && echo $SD
+}
+
 # FZF Shell Functions - Provided by FZF official documentation and other sources
 fcd() {
   local dir
