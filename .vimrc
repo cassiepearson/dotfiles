@@ -146,7 +146,7 @@ map <leader>t :NERDTreeToggle<CR>
 nnoremap o o<Esc>
 nnoremap O O<Esc>
 " Map fzf
-nnoremap <leader>ff :FZF<CR>
+nnoremap <leader>ff :Files ~<CR>
 
 "split navigations
 " Move split below

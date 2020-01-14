@@ -14,11 +14,11 @@ alias csd='cd $SD'
 alias ducky="nvim ~/.ducky"
 alias duck="nvim ~/.ducky"
 alias repos="cd $HOME/Repos"
-alias journal="vim ~/Documents/Journals/$(date '+%A %W %Y %X')"
+alias journal="vim ~/Documents/Journals/$(date '+%s')"
+alias journal="vim ~/Documents/Journals/$(date '+%A_%W_%Y_%X')"
 
 # Abbreviate common commands
 alias la='ls -la'
-alias cl="clear"
 alias svi='sudo vi'
 alias svim='sudo nvim'
 alias py="python3"
