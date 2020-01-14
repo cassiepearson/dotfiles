@@ -11,19 +11,23 @@ read -s -p "Enter Password for sudo: " PSWD
 
 if [ "${PCKG}" = "brew" ]; then
     # Install all dependencies
-    brew install zsh neovim curl python git
+    brew install zsh neovim curl python git ripgrep
     easy_install pip
     pip install neovim
     `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    `git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf`
+    `bash ~/.fzf/install`
 elif [ "${PCKG}" = "apt" ]; then
     # Install all dependencies
     echo $PSWD | sudo apt update
-    echo $PSWD | sudo apt-get -qq --yes install zsh python3 python3-pip neovim curl git libuser
+    echo $PSWD | sudo apt-get -qq --yes install zsh python3 python3-pip neovim curl git libuser ripgrep
     pip3 install neovim
     `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     echo $PSWD | sudo lchsh $(whoami) /bin/zsh
+    `git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf`
+    `bash ~/.fzf/install`
 else
     echo "Implemented for: brew, apt. Otherwise only works if python3, pip, neovim python package, git, curl, zsh, oh-my-zsh, nvmim are already installed."
 fi
