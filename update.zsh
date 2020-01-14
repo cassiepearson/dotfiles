@@ -8,3 +8,5 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 /bin/cp -f $DIR/.vimrc  $HOME/.vimrc 
 /bin/cp -f $DIR/.zshrc $HOME/.zshrc
 /bin/cp -f $DIR/.config/nvim/init.vim $HOME/.config/nvim/init.vim
+/bin/cp -f $HOME/.zsh/templates/.ducky_reset $HOME/.ducky
+

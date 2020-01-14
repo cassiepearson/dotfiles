@@ -13,6 +13,7 @@ alias ....='cd ../../../../'
 alias csd='cd $SD'
 alias ducky="nvim ~/.ducky"
 alias duck="nvim ~/.ducky"
+alias clean_duck="cp -f ~/.zsh/templates/.ducky_reset ~/.ducky"
 alias repos="cd $HOME/Repos"
 alias journal="vim ~/Documents/Journals/$(date '+%s')"
 alias journal="vim ~/Documents/Journals/$(date '+%A_%W_%Y_%X')"
