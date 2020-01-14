@@ -1,0 +1,41 @@
+#!/bin/bash
+# Change the above if needed, default for most unix is bash
+
+# Ask for a username
+echo "This will help you generate and add an ssh key to github."
+echo What is your github username?
+read USER_NAME
+
+# Navigate to the ssh directory
+cd $HOME/.ssh
+
+# Check to see if the key already exists
+if [ -e github-$USER_NAME ]
+then
+    echo "You already have an appropriately named key, copying to clipboard."
+else
+    echo "No key found, generating key."
+    
+    # Generate Keys
+    `ssh-keygen -t rsa -b 4096 -C "github-$USER_NAME" -f "github-$USER_NAME"`
+    echo "Public key successfully generated."
+
+    # Adding keys to the ssh-agent
+    eval "$(ssh-agent -s)"
+    `ssh-add ~/.ssh/github-$USER_NAME`
+    echo "Added your ssh private key to ssh-agent."
+
+    # Open firefox
+    echo "Public key will be put into clipboard."
+fi
+
+# Alert the user as to the next steps
+echo "Opening firefox, navigating to github.com..."
+echo "Navigate to your developer settings to ssh keys and paste in your key."
+`firefox -new-window https://github.com`
+
+# Put public key in clipboard
+`xclip -sel clip < ~/.ssh/github-$USER_NAME.pub`
+
+# The above is safe because the owner of the selection (clipboard) is
+# closed when the script is closed. So, the key does not remain in clipboard.
