@@ -29,3 +29,4 @@ export PATH="/usr/local/sbin:$PATH"
 export REPOS="$HOME/Repos"
 export SD="$HOME" # Initialize as dummy value, see sd in functions.zsh
 export SCHOOL="$HOME/Documents/School"
+export PATH="$HOME/.zsh/scripts:$PATH"
