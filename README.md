@@ -9,6 +9,8 @@ Dependencies:
  * curl
  * zsh
  * oh-my-zsh
+ * fzf
+ * ripgrep
 
 To install:
 ```
@@ -16,6 +18,10 @@ bash setup.sh [package manager name: brew/apt]
 ```
 
 To update repository to dotfiles currently in use:
+```
+zsh update_repo.zsh
+```
+To update the dotfiles currently in use:
 ```
 zsh update.zsh
 ```
