@@ -77,6 +77,10 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 " -------------------------------------------------------------------------------------------------------------
 
+" zsh - Set shell in vim command prompt to zsh ----------------------------------
+let &shell='/bin/zsh -i'
+" -------------------------------------------------------------------------------
+
 " Font -------------------------------------------------------------------------
 set encoding=utf-8
 set guifont=Hack\ Nerd\ Font\ Mono\ Regular\ 14
