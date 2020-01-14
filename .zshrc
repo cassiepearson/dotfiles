@@ -9,9 +9,6 @@ source $HOME/.zsh/aliases.zsh
 
 # Import custom shell functions
 source $HOME/.zsh/functions.zsh
-#
-# Source Oh my zsh
-source $ZSH/oh-my-zsh.sh
 
 # Set ZSH_CUSTOM folder to .zsh
 ZSH_CUSTOM=$HOME/.zsh
@@ -105,6 +102,9 @@ plugins=(
 
 # Set default keybindings to be vim mode (defaul is emacs mode)
 set -o vi
+
+# Source Oh my zsh
+source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 

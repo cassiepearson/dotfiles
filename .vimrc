@@ -126,6 +126,8 @@ set noswapfile                       " Turn off swap files
 set mouse=a                          " Turn on mouse support in vim (why was this off?)
 " set list                             " Show invisible characters on start
 set listchars=tab:\|-,eol:¬,trail:•,nbsp:•,extends:>,precedes:<,space:• " Set a list of invisible characters and the symbols to show for them
+" Set a variable with the OS name
+let kernel = substitute(system('uname'), "\n", "", "")
 " ------------------------------------------------------------------------------
 
 " Custom keybindings -----------------------------------------------------------
@@ -292,14 +294,15 @@ let g:fzf_layout = { 'window': '10new' }
 
 " Deoplete ----------------------------------------------------------------------
 let g:deoplete#enable_at_startup = 1
-if !exists('g:deoplete#omni#input_patterns')
-  let g:deoplete#omni#input_patterns = {}
+if kernel == "Darwin"
+    " Extend the dictionary with my local macos dictionary if on macos
+    setlocal dictionary+=/usr/share/dict/words
 endif
+" Do not complete short words
+call deoplete#custom#source(
+\ 'dictionary', 'min_pattern_length', 3)
 " let g:deoplete#disable_auto_complete = 1 " Change to manual trigger
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-" Ignore omni php source
-let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
-let g:deoplete#ignore_sources.php = ['omni']
 " -------------------------------------------------------------------------------
 
 " Snippets Copmletion -----------------------------------------------------------
