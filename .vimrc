@@ -44,7 +44,6 @@ Plugin 'deoplete-plugins/deoplete-clang'                " Deoplete C support thr
 Plugin 'deoplete-plugins/deoplete-docker'               " Deoplete Docker support
 Plugin 'deoplete-plugins/deoplete-zsh'                  " Deoplete Zsh support
 Plugin 'psf/black'                                      " Python Black in vim - A python autoformatter
-Plugin 'lvht/phpcd.vim'                                 " Deoplete PHP support
 Plugin 'voldikss/vim-mma'                               " Deoplete Mathematica support
 Plugin 'racer-rust/vim-racer'                           " Racer for Rust autocompletion - cargo install racer
 Plugin 'tomtom/tcomment_vim'
