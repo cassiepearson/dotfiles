@@ -15,7 +15,6 @@ Plugin 'VundleVim/Vundle.vim'
 
 " MY PLUGINS
 Plugin 'flazz/vim-colorschemes'                         " Ton of colorschemes
-Plugin 'tpope/vim-fugitive'                             " Git integration
 Plugin 'vim-syntastic/syntastic'                        " Syntax checking
 Plugin 'scrooloose/nerdtree'                            " Tree view
 " Plugin 'scrooloose/nerdcommenter'                       " Comment/Uncomment shortcut
@@ -158,18 +157,9 @@ nnoremap <C-K> <C-W><C-K>
 " Move split right
 nnoremap <C-L> <C-W><C-L>
 " Move split left
-nnoremap <C-H> <C-W><C-H>
+noremap <C-H> <C-W><C-H>
 " deoplete tab-complete
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-
-" Default Keybinding Notes:
-" After selection, '+' or '-' will expand using vim expand region
-" <leader>cc to comment a selection with nerdcommenter
-" cs<symbol to replace><symbol to replace with> Replace a symbol surrounding items in line for a different symbol
-" ds<symbol> to delete a surrounding symbol
-" :Dispatch <command> Dispatch a command to terminal - used for compilation asynchonously
-" Jedi has its own commands <C-space> for completion, <leader>d Goto definition, <leader>g Typical goto, and more
-" Fugitive has its own set of git commands
 " ------------------------------------------------------------------------------
 
 " Clipboard --------------------------------------------------------------------
@@ -191,7 +181,6 @@ let g:lightline = {
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
       \ },
       \ 'component_function': {
-      \   'gitbranch': 'fugitive#head'
       \ },
       \ }
 
