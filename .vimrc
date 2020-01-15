@@ -43,6 +43,7 @@ Plugin 'deoplete-plugins/deoplete-dictionary'           " Deoplete English suppo
 Plugin 'deoplete-plugins/deoplete-clang'                " Deoplete C support through clang
 Plugin 'deoplete-plugins/deoplete-docker'               " Deoplete Docker support
 Plugin 'deoplete-plugins/deoplete-zsh'                  " Deoplete Zsh support
+Plugin 'psf/black'                                      " Python Black in vim - A python autoformatter
 Plugin 'lvht/phpcd.vim'                                 " Deoplete PHP support
 Plugin 'voldikss/vim-mma'                               " Deoplete Mathematica support
 Plugin 'racer-rust/vim-racer'                           " Racer for Rust autocompletion - cargo install racer
@@ -148,6 +149,9 @@ nnoremap o o<Esc>
 nnoremap O O<Esc>
 " Map fzf
 nnoremap <leader>ff :Files ~<CR>
+" Shift j, Shift k for using expand plugin - A way to smart select sections
+map K <Plug>(expand_region_expand)
+map J <Plug>(expand_region_shrink)
 
 "split navigations
 " Move split below
@@ -335,6 +339,20 @@ let g:webdevicons_enable_nerdtree = 0
 let g:WebDevIconsNerdTreeGitPluginForceVAlign = 2
 " enable folder/directory glyph flag (disabled by default with 0)
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+" -------------------------------------------------------------------------------
+
+" Vim Expand Configuration - For smart visual selections, mapped to J,K ---------
+" Default settings. (NOTE: Remove comments in dictionary before sourcing)
+let g:expand_region_text_objects = {
+      \ 'iw'  :0,
+      \ 'i"'  :0,
+      \ 'i''' :0,
+      \ 'i]'  :1, 
+      \ 'ib'  :1, 
+      \ 'il'  :0, 
+      \ 'ip'  :0,
+      \ 'ie'  :0, 
+      \ }
 " -------------------------------------------------------------------------------
 
 " End .vimrc
