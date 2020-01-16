@@ -1,5 +1,7 @@
 #!/bin/bash
-# Change the above if needed, default for most unix is bash
+
+# Determine kernel - Used to determine what clipboard manager to load the keys into
+KERNEL=$(uname)
 
 # Ask for a username
 echo "This will help you generate and add an ssh key to github."
@@ -35,7 +37,13 @@ echo "Navigate to your developer settings to ssh keys and paste in your key."
 `firefox -new-window https://github.com`
 
 # Put public key in clipboard
-`xclip -sel clip < ~/.ssh/github-$USER_NAME.pub`
+if [[ $KERNEL == "Dawin" ]]
+    `pbcopy < ~/.ssh/github-$USER_NAME.pub`
+elif [[ $KERNEL == "Linux" ]]
+    `xclip -sel clip < ~/.ssh/github-$USER_NAME.pub`
+else 
+    echo "Currently, only Linux and Darwin kernels are supported by this script."
+fi
 
 # The above is safe because the owner of the selection (clipboard) is
 # closed when the script is closed. So, the key does not remain in clipboard.
