@@ -3,7 +3,7 @@
 # Set directory where script is being called
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
-# Copy the files into the repository - Called from bin to prevent MacOS rebind of cp -[options] to cp -[options]i which always asks before overwrite
+# Copy the files into the home directory - Called from bin to prevent MacOS rebind of cp -[options] to cp -[options]i which always asks before overwrite
 /bin/cp -rf $DIR/.zsh $HOME/ 
 /bin/cp -f $DIR/.vimrc  $HOME/.vimrc 
 /bin/cp -f $DIR/.zshrc $HOME/.zshrc
