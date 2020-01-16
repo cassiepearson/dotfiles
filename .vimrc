@@ -151,6 +151,10 @@ nnoremap <leader>ff :Files ~<CR>
 " Shift j, Shift k for using expand plugin - A way to smart select sections
 map K <Plug>(expand_region_expand)
 map J <Plug>(expand_region_shrink)
+" Add a vertical split shortcut
+nnoremap <leader>vv :vsplit<CR>
+" Add fzf split shortcut
+nnoremap <leader>fv :vsplit <bar> Files ~<CR>
 
 "split navigations
 " Move split below
