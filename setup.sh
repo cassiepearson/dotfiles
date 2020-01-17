@@ -14,6 +14,7 @@ if [ "${PCKG}" = "brew" ]; then
     brew install zsh neovim curl python git ripgrep
     easy_install pip
     pip install neovim
+    pip install --user virtualenv
     `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     `git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf`
@@ -24,6 +25,7 @@ elif [ "${PCKG}" = "apt" ]; then
     echo $PSWD | sudo apt update
     echo $PSWD | sudo apt-get -qq --yes install zsh python3 python3-pip neovim curl git libuser ripgrep
     pip3 install neovim
+    pip3 install --user virtualenv
     `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     echo $PSWD | sudo lchsh $(whoami) /bin/zsh
