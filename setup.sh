@@ -18,6 +18,7 @@ if [ "${PCKG}" = "brew" ]; then
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     `git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf`
     `bash ~/.fzf/install`
+    `vim -c VundleUpdate -c quitall`
 elif [ "${PCKG}" = "apt" ]; then
     # Install all dependencies
     echo $PSWD | sudo apt update
@@ -28,8 +29,9 @@ elif [ "${PCKG}" = "apt" ]; then
     echo $PSWD | sudo lchsh $(whoami) /bin/zsh
     `git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf`
     `bash ~/.fzf/install`
+    `vim -c VundleUpdate -c quitall`
 else
-    echo "Implemented for: brew, apt. Otherwise only works if python3, pip, neovim python package, git, curl, zsh, oh-my-zsh, nvmim are already installed."
+    echo "Implemented for: brew, apt. Otherwise only works if python3, pip, neovim python package, git, curl, zsh, oh-my-zsh, fzf, ripgrep, vundle are already installed."
 fi
 
 

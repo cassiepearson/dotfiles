@@ -33,8 +33,8 @@ Plugin 'junegunn/goyo.vim'                              " Distraction free vim -
 Plugin 'tpope/vim-dispatch'                             " Dispatch commands
 Plugin 'davidhalter/jedi-vim'                           " Python Jedi integration
 Plugin 'nvie/vim-flake8'                                " Python Flake8 PEP8 linter
-Plugin 'tpope/vim-obsession'                            " Extends vim session functionality
-Plugin 'dhruvasagar/vim-prosession'                     " Extends vim session functionality - :Obsess, :Prosession
+"Plugin 'tpope/vim-obsession'                            " Extends vim session functionality
+"Plugin 'dhruvasagar/vim-prosession'                     " Extends vim session functionality - :Obsess, :Prosession
 Plugin 'junegunn/fzf'                                   " fzf support in vim
 Plugin 'junegunn/fzf.vim'
 Plugin 'deoplete-plugins/deoplete-jedi'                 " Deoplete Python support
