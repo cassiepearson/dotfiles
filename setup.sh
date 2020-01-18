@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Take package manager as argument
+# Take package manager as argument - return a string of lower case alphabetic characters from user input
 PCKG=$(grep -Eo '[A-Za-z]' <<< $1 | tr '[:upper:]' '[:lower:]' | tr -d '\n')
 
 # Set a directory to clone
