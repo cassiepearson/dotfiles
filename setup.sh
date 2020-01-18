@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Take package manager as argument
-PCKG=$1
+PCKG=$(grep -Eo '[A-Za-z]' <<< $1 | tr '[:upper:]' '[:lower:]' | tr -d '\n')
 
 # Set a directory to clone
 REPOS=$HOME/Repos
