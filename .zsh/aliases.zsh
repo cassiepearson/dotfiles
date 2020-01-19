@@ -60,7 +60,7 @@ alias dps='docker ps'
 alias dim='docker images'
 
 # Docker development environment containers
-alias cdev='docker run --rm -it -v ~/Repos:/Repos c_dev:latest'
+alias cdev='docker run --rm -it -v $(pwd):/code c_dev:latest'
 
 # Linux only aliases
 #alias xcp="xclip -selection c"

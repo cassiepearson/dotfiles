@@ -31,7 +31,7 @@ elif [ "${PCKG}" = "apt" ]; then
     echo $PSWD | sudo lchsh $(whoami) /bin/zsh
     `git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf`
     `bash ~/.fzf/install`
-    `vim -c VundleUpdate -c quitall`
+    `vim +PluginInstall +qall`
 else
     echo "Implemented for: brew, apt. Otherwise only works if python3, pip, neovim python package, git, curl, zsh, oh-my-zsh, fzf, ripgrep, vundle are already installed."
 fi
