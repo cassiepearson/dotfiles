@@ -40,7 +40,7 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'deoplete-plugins/deoplete-jedi'                 " Deoplete Python support
 Plugin 'deoplete-plugins/deoplete-go'                   " Deoplete Go support
 Plugin 'deoplete-plugins/deoplete-dictionary'           " Deoplete English support
-Plugin 'deoplete-plugins/deoplete-clang'                " Deoplete C support through clang
+"Plugin 'deoplete-plugins/deoplete-clang'                " Deoplete C support through clang
 Plugin 'deoplete-plugins/deoplete-docker'               " Deoplete Docker support
 Plugin 'deoplete-plugins/deoplete-zsh'                  " Deoplete Zsh support
 "Plugin 'psf/black'                                      " Python Black in vim - A python autoformatter

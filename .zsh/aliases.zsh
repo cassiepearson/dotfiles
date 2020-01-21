@@ -15,8 +15,7 @@ alias ducky="nvim ~/.ducky"
 alias duck="nvim ~/.ducky"
 alias clean_duck="cp -f ~/.zsh/templates/.ducky_reset ~/.ducky"
 alias repos="cd $HOME/Repos"
-alias journal="vim ~/Documents/Journals/$(date '+%s')"
-alias journal="vim ~/Documents/Journals/$(date '+%D_%A')"
+alias journal="vim ~/Documents/Journals/$(date +'%m_%d_%y_%A')"
 
 # Abbreviate common commands
 alias la='ls -la'

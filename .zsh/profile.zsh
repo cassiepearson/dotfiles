@@ -20,6 +20,9 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --follow -g "!{.git,node_modules
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 
+# TeXlive
+export PATH="/usr/local/texlive/2019/bin/x86_64-darwin:$PATH"
+
 # Set custom paths
 export REPOS="$HOME/Repos"
 export SD="$HOME" # Initialize as dummy value, see sd in functions.zsh
