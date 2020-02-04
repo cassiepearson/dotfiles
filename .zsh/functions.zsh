@@ -10,6 +10,12 @@ sd()
     export SD="${1}" && echo $SD
 }
 
+# Create a document from my homework template
+hw()
+{
+    pandoc ${1}.md -o ${1}.pdf --template $REPOS/pandoc-templates/homework.latex
+}
+
 # FZF Shell Functions - Provided by FZF official documentation and other sources
 fcd() {
   local dir
