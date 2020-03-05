@@ -155,6 +155,11 @@ map J <Plug>(expand_region_shrink)
 nnoremap <leader>vv :vsplit<CR>
 " Add fzf split shortcut
 nnoremap <leader>fv :vsplit <bar> Files ~<CR>
+nnoremap <leader>fh :split <bar> Files ~<CR>
+
+" Indent shortcut
+nnoremap <leader>ii >><CR>
+nnoremap <leader>di <<<CR>
 
 "split navigations
 " Move split below
