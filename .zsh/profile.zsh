@@ -33,3 +33,6 @@ export PATH="$HOME/.zsh/scripts:$PATH"
 export PATH="/usr/local/opt/python@3.8/bin:$PATH"
 export PKG_CONFIG_PATH="/usr/local/opt/python@3.8/lib/pkgconfig"
 export LDFLAGS="-L/usr/local/opt/python@3.8/lib"
+
+# Git editor change
+export GIT_EDITOR="vim"
