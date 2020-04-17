@@ -52,6 +52,10 @@ alias cargot="cargo test"
 alias cc="cargo clean && cargo update && cargo build --release"
 alias trace_build="RUST_LOG=trace cargo build -v"
 alias trace_cargo="RUST_LOG=trace cargo"
+alias acargob="RUST_FLAGS=-Awarnings cargo build"
+alias acargobr="RUST_FLAGS=-Awarnings cargo build --release"
+alias acargot="RUST_FLAGS=-Awarnings cargo test -- --nocapture"
+alias acargotr="RUST_FLAGS=-Awarnings cargo test --release -- --nocapture"
 
 # Docker
 alias dls='docker service ls'
