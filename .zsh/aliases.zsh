@@ -66,6 +66,10 @@ alias dim='docker images'
 alias dev='docker run --rm -it -v $(pwd):/code dev_env:latest'
 alias cdev='docker run --rm -it -v $(pwd):/code c_dev:latest'
 alias cenv='docker run --rm -it -v $(pwd):/code c_env:latest'
+alias kali='docker run --rm -it -v $(pwd):/code kali:latest'
+alias parrot='docker run --rm -it -v $(pwd):/code parrot:latest'
+
+
 
 # Linux only aliases
 #alias xcp="xclip -selection c"
