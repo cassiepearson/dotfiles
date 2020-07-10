@@ -68,8 +68,7 @@ alias cdev='docker run --rm -it -v $(pwd):/code c_dev:latest'
 alias cenv='docker run --rm -it -v $(pwd):/code c_env:latest'
 alias kali='docker run --rm -it -v $(pwd):/code kali:latest'
 alias parrot='docker run --rm -it -v $(pwd):/code parrot:latest'
-
-
+alias parroth='docker run --rm -it -v $(pwd):/code parrot_heavy:latest'
 
 # Linux only aliases
 #alias xcp="xclip -selection c"
