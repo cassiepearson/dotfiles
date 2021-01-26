@@ -1,0 +1,115 @@
+{
+    "editor.renderWhitespace": "all",
+    "breadcrumbs.enabled": false,
+    "window.zoomLevel": 1,
+    "rust.rustup": {
+        "toolchain": "stable-x86_64-apple-darwin",
+        "nightlyToolchain": "nightly-x86_64-apple-darwin"
+    },
+    "lldb.executable": "rust-lldb",
+    "editor.renderControlCharacters": true,
+    "vim.leader": "t",
+    "vim.neovimPath": "/usr/local/bin/nvim",
+    "vim.enableNeovim": false,
+    "search.showLineNumbers": true,
+    "editor.lineNumbers": "relative",
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "[markdown]": {
+        "editor.tabSize": 2
+    },
+    "vim.insertModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "C-h"
+            ],
+            "after": [
+                "<C-o>",
+                "<left>"
+            ]
+        },
+        {
+            "before": [
+                "C-l"
+            ],
+            "after": [
+                "<C-o>j",
+                "<right>"
+            ]
+        },
+        {
+            "before": [
+                "C-j"
+            ],
+            "after": [
+                "<C-o>",
+                "<down>"
+            ]
+        },
+        {
+            "before": [
+                "C-k"
+            ],
+            "after": [
+                "<C-o>",
+                "<up>"
+            ]
+        },
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "o"
+            ],
+            "after": [
+                "o",
+                "<esc>"
+            ],
+        },
+        {
+            "before": [
+                "O"
+            ],
+            "after": [
+                "O",
+                "<esc>"
+            ],
+        },
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "editor.action.indentLines"
+            ]
+        },
+        {
+            "before": [
+                "<"
+            ],
+            "commands": [
+                "editor.action.outdentLines"
+            ]
+        },
+    ],
+    "vim.easymotion": true,
+    "vim.surround": true,
+    "rust-analyzer.cargo.loadOutDirsFromCheck": true,
+    "rust-analyzer.cargo.allFeatures": true,
+    "vim.history": 200,
+    "editor.tabCompletion": "on",
+    "editor.wordWrap": "on",
+    "editor.acceptSuggestionOnEnter": "smart",
+    "rust-analyzer.diagnostics.enableExperimental": false,
+    "rust-analyzer.cargo.target": null,
+    "rust-analyzer.rustfmt.extraArgs": [
+        "+nightly"
+    ],
+    "markdownlint.config": {
+        "MD007": false
+    }
+}
