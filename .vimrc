@@ -15,11 +15,9 @@ Plugin 'VundleVim/Vundle.vim'
 
 " MY PLUGINS
 Plugin 'flazz/vim-colorschemes'                         " Ton of colorschemes
+Plugin 'Valloric/YouCompleteMe'                         " You complete me
 Plugin 'vim-syntastic/syntastic'                        " Syntax checking
 Plugin 'scrooloose/nerdtree'                            " Tree view
-" Plugin 'scrooloose/nerdcommenter'                       " Comment/Uncomment shortcut
-" Plugin 'w0rp/ale'                                       " Linter
-" Plugin 'maximbaz/lightline-ale'                         " Add ALE linter information to status bar
 Plugin 'terryma/vim-expand-region'                      " Improved Selection
 Plugin 'ryanoasis/vim-devicons'                         " Add icon/glyph support to vim
 Plugin 'Yggdroot/indentLine'                            " Draw indent lines
@@ -37,27 +35,13 @@ Plugin 'nvie/vim-flake8'                                " Python Flake8 PEP8 lin
 "Plugin 'dhruvasagar/vim-prosession'                     " Extends vim session functionality - :Obsess, :Prosession
 Plugin 'junegunn/fzf'                                   " fzf support in vim
 Plugin 'junegunn/fzf.vim'
-Plugin 'deoplete-plugins/deoplete-jedi'                 " Deoplete Python support
-Plugin 'deoplete-plugins/deoplete-go'                   " Deoplete Go support
-Plugin 'deoplete-plugins/deoplete-dictionary'           " Deoplete English support
-"Plugin 'deoplete-plugins/deoplete-clang'                " Deoplete C support through clang
-Plugin 'deoplete-plugins/deoplete-docker'               " Deoplete Docker support
-Plugin 'deoplete-plugins/deoplete-zsh'                  " Deoplete Zsh support
 "Plugin 'psf/black'                                      " Python Black in vim - A python autoformatter
 " Plugin 'voldikss/vim-mma'                               " Deoplete Mathematica support
 Plugin 'racer-rust/vim-racer'                           " Racer for Rust autocompletion - cargo install racer
 Plugin 'tomtom/tcomment_vim'
 Plugin 'honza/vim-snippets'                             " Vim snippets (autocomplete snippets)
 Plugin 'SirVer/ultisnips'                               " Ultisnips bindings for vim snippets (autocomplete snippets)
-if has('nvim')
-  Plugin 'Shougo/deoplete.nvim'
-  Plugin 'roxma/nvim-yarp'
-  Plugin 'roxma/vim-hug-neovim-rpc', { 'do': ':UpdateRemotePlugins' }
-else
-  Plugin 'Shougo/deoplete.nvim'
-  Plugin 'roxma/nvim-yarp'
-  Plugin 'roxma/vim-hug-neovim-rpc'
-endif
+Plugin 'easymotion/vim-easymotion'                      " Vim easy motion
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -77,7 +61,7 @@ filetype plugin indent on    " required
 " -------------------------------------------------------------------------------------------------------------
 
 " zsh - Set shell in vim command prompt to zsh ----------------------------------
-let &shell='/bin/zsh -i'
+let shell='/bin/zsh -i'
 " -------------------------------------------------------------------------------
 
 " Font -------------------------------------------------------------------------
@@ -244,13 +228,6 @@ let g:lightline = {
       \ },
       \ }
 
-" Expand lightline using lightline ALE to display linter information--ALE Stuff
-" let g:lightline.component_expand = {
-      " \  'linter_checking': 'lightline#ale#checking',
-      " \  'linter_warnings': 'lightline#ale#warnings',
-      " \  'linter_errors': 'lightline#ale#errors',
-      " \  'linter_ok': 'lightline#ale#ok',
-      " \ }
 " Specify what information to display and what color
 " let g:lightline.component_type = {
       " \     'linter_checking': 'left',
@@ -260,26 +237,6 @@ let g:lightline = {
       " \ }
 " Add component to the lightline
 " let g:lightline.active = { 'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ]] }
-" ------------------------------------------------------------------------------
-
-" Nerdcommenter ---------------------------------------------------------------- Replaced by tcomment
-" Add spaces after comment delimiters by default
-" let g:NERDSpaceDelims = 1
-"
-" Use compact syntax for prettified multi-line comments
-" let g:NERDCompactSexyComs = 1
-"
-" Align line-wise comment delimiters flush left instead of following code indentation
-" let g:NERDDefaultAlign = 'left'
-"
-" Allow commenting and inverting empty lines (useful when commenting a region)
-" let g:NERDCommentEmptyLines = 1
-"
-" Enable trimming of trailing whitespace when uncommenting
-" let g:NERDTrimTrailingWhitespace = 1
-"
-" Enable NERDCommenterToggle to check all selected lines is commented or not
-" let g:NERDToggleCheckAllLines = 1
 " ------------------------------------------------------------------------------
 
 " NerdTree ---------------------------------------------------------------------
@@ -293,19 +250,6 @@ let g:rustfmt_autosave = 1                              " Autorun rustfmt on fil
 let g:rust_clip_command = 'pbcopy'                      " Use :RustPlay in MacOS to send to the rust playpen
 " Setup cargo build bindings
 autocmd FileType rust compiler cargo
-" ------------------------------------------------------------------------------
-
-" Linters for ALE --------------------------------------------------------------
-" let g:ale_linters = {
-" \   'python' : ['flake8'],
-" \   'markdown': ['proselint'],
-" \}
-"
-" let g:ale_set_highlights = 0 " Disable ALE highlighting
-"
-" Remove ALE's highlighting for warning and error indicators (>> and --)
-"highlight clear ALEErrorSign
-" highlight clear ALEWarningSign
 " ------------------------------------------------------------------------------
 
 " Syntastic --------------------------------------------------------------------
@@ -341,19 +285,6 @@ let g:fzf_layout = { 'window': '-tabnew' }
 let g:fzf_layout = { 'window': '10new' }
 " ------------------------------------------------------------------------------
 
-" Deoplete ----------------------------------------------------------------------
-let g:deoplete#enable_at_startup = 1
-if kernel == "Darwin"
-    " Extend the dictionary with my local macos dictionary if on macos
-    setlocal dictionary+=/usr/share/dict/words
-endif
-" Do not complete short words
-call deoplete#custom#source(
-\ 'dictionary', 'min_pattern_length', 3)
-" let g:deoplete#disable_auto_complete = 1 " Change to manual trigger
-autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-" -------------------------------------------------------------------------------
-
 " Snippets Copmletion -----------------------------------------------------------
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<c-f>"
@@ -363,24 +294,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 " -------------------------------------------------------------------------------
-
-
-" Omnifuncs -----------------------------------------------------------------------
-set omnifunc=syntaxcomplete#Complete
-augroup omnifuncs
-  autocmd!
-  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-augroup end
-" -------------------------------------------------------------------------------
-
-" Mathematica Font Item Smart Conceal -------------------------------------------
-let g:mma_candy = 1
-" -------------------------------------------------------------------------------
-
+"
 " Rust Racer Config -------------------------------------------------------------
 set hidden
 let g:racer_cmd = "/Users/christophernegrich/.cargo/bin/racer"

@@ -1,8 +1,8 @@
 # Aliases
 
 # Access config files easily
-alias zshrc="nvim ~/.zshrc"
-alias vimrc="nvim ~/.vimrc"
+alias zshrc="vim ~/.zshrc"
+alias vimrc="vim ~/.vimrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Navigation shortcuts
@@ -20,7 +20,7 @@ alias journal="vim ~/Documents/Personal/Journals/$(date +'%m_%d_%y_%A')"
 # Abbreviate common commands
 alias la='ls -la'
 alias svi='sudo vi'
-alias svim='sudo nvim'
+alias svim='sudo vim'
 alias py="python3"
 alias gfind='find . | grep'
 alias sue='sudo -E'
@@ -33,11 +33,9 @@ alias t3="tree -L 3"
 # Prevent typos from slowing down workflow
 alias nao="nano"
 alias nanoo="nano"
-alias v="nvim"
-alias vim="nvim"
-alias nv="nvim"
-alias vom="nvim"
-alias nmvim="nvim"
+alias v="vim"
+alias vim="vim"
+alias vom="vim"
 
 # Alias common utilities
 alias evaluate="eval '$(ssh-agent -s)' && ssh-add ~/.ssh/id_rsa"

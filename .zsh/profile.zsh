@@ -35,4 +35,4 @@ export PKG_CONFIG_PATH="/usr/local/opt/python@3.8/lib/pkgconfig"
 export LDFLAGS="-L/usr/local/opt/python@3.8/lib"
 
 # Git editor change
-export GIT_EDITOR="nvim"
+export GIT_EDITOR="vim"
