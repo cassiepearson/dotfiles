@@ -101,7 +101,7 @@ plugins=(
 )
 
 # Set default keybindings to be vim mode (defaul is emacs mode)
-set -o vi
+# set -o vi
 
 # Source Oh my zsh
 source $ZSH/oh-my-zsh.sh
