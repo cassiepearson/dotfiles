@@ -2,20 +2,7 @@
 
 For easy setup of my dev environment.
 
-Dependencies:
- * Neovim and neovim python package
- * git
- * python and pip
- * curl
- * zsh
- * oh-my-zsh
- * fzf
- * ripgrep
-
-To install:
-```
-bash setup.sh [package manager name: brew/apt]
-```
+Alternatively, to have a docker image with autosetup use these [dockerfiles and build commands](github.com/cnegrich/docker).
 
 To update repository to dotfiles currently in use:
 ```
