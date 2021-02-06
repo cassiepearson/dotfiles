@@ -20,3 +20,4 @@ Tex:
   - Markdown All in One
   - LaTeX workshop
   - markdownlint
+  - Code Spell Checker
